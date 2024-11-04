@@ -1,0 +1,30 @@
+<h1>Guess the Number Between 1 to 10</h1>
+<input type="text" id="data">
+<button onclick="res()">go</button>
+<h3 id="comment"></h3>
+<h3>Your Score:</h3>
+<p id="result"></p>
+<script>
+    var b = Math.floor(Math.random()*10+1)
+    //console.log(b)
+    var score=10
+    var c = document.getElementById("result")
+    c.textContent=score
+    console.log(c.value)
+    function res()
+    {  
+            var a = document.getElementById('data')
+            if(a.value==b){
+                document.getElementById("comment").textContent="Congrats..You win!"
+            }
+            else{
+                document.getElementById("comment").textContent="Ohh!..you are wrong"
+                score=score-2
+                c.textContent=score
+                //console.log(c.value)
+            }
+            if(score==0){
+                document.getElementById("comment").textContent="You Lose!! next time"  
+            }
+}
+</script>
